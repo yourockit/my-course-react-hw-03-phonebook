@@ -5,6 +5,8 @@ import { ContactList } from "./ContactsList/ContactsList";
 import { ContactForm } from "./ContactForm/ContactForm";
 import { Section } from "./Section/Section";
 
+
+const LS_KEY = 'contacts';
 export class App extends Component {
   
   state = {
@@ -24,7 +26,7 @@ addContact = ({name, number}) => {
     number,
   };
 
-  this.setState(({contacts}) => (
+this.setState(({contacts}) => (
  contacts.find(contact => contact.name === name)
  ? alert(`${name} is alredy in contacts`)
  : {contacts: [contact, ...contacts],}
@@ -42,6 +44,20 @@ deleteContact = contactId => {
   this.setState(prevState => ({
     contacts: prevState.contacts.filter(contact => contact.id !== contactId)
   }))
+};
+
+componentDidMount() {
+  const savedState = localStorage.getItem(LS_KEY);
+  if(savedState) {
+    const savedStateParse = JSON.parse(savedState);
+    this.setState({ contacts: savedStateParse });
+  };
+};
+
+componentDidUpdate(prevPreps, prevState) {
+if(prevState.contacts !== this.state.contacts) {
+  localStorage.setItem(LS_KEY, JSON.stringify(this.state.contacts));
+};
 };
 
 render() {
