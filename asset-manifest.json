@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/my-course-react-hw-03-phonebook/static/css/main.7acaea2f.css",
+    "main.js": "/my-course-react-hw-03-phonebook/static/js/main.debe749f.js",
+    "index.html": "/my-course-react-hw-03-phonebook/index.html",
+    "main.7acaea2f.css.map": "/my-course-react-hw-03-phonebook/static/css/main.7acaea2f.css.map",
+    "main.debe749f.js.map": "/my-course-react-hw-03-phonebook/static/js/main.debe749f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.debe749f.js"
+  ]
+}
